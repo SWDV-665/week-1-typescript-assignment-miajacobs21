@@ -1,35 +1,36 @@
-//  creating a Grocery class
+// creating a Grocery class
 class Grocery {
-    // adding properties with their data type
-    name: string;
-    quantity: number;
-    price: number;
-    department: string;
+  // properties:data type
+  name: string;
+  department: string;
+  quantity: number;
+  price: number;
 
-    // adding a constructor
-    constructor(n: string, q: number, p: number, d: string){
-        this.name = n;
-        this.quantity = q;
-        this.price = p;
-        this.department = d;
-    }
+  // adding a constructor
+  constructor(n: string, d:string, q: number, p: number){
+      this.name = n;
+      this.department = d;
+      this.quantity = q;
+      this.price = p;
+  }
 }
 
-// adding a list of grocery items
-// NOTE - "new" is used to inititalise objects
+// creating a grocery items list
+// **new keyword is used to inititalise objects**
 let list_of_items = [
-    new Grocery("milk", 3, 10, "Dairy"),
-    new Grocery("bread", 6, 25, "Bakery"),
-    new Grocery("egg", 11, 10, "Dairy")
+  new Grocery("milk", "dairy", 3, 10),
+  new Grocery("bread", "bakery", 6, 25),
+  new Grocery("egg", "dairy", 11, 10)
 ]
 
-// **ACCESS HTML - element with id "app"**
+// **accessing the html element with id app**
 const ele = document.getElementById("app");
 
-// **creating a <p> element for each item in the grocery list and
-// append it to the html page**
+// creatiing a <p> element for each item in the grocery list and
+// appending it to the html page - use ${e.property name} - the rest shows up as text 
+// in HTML doc 
 list_of_items.forEach(e => {
   const p = document.createElement("p");
-  p.textContent = `${e.name} ${e.quantity} ${e.department} ${e.price}`;
+  p.textContent = `${e.name} (${e.department}) | qty:${e.quantity} $${e.price}`;
   ele.appendChild(p);
 });
