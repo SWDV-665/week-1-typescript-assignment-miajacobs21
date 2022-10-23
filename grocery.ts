@@ -6,7 +6,7 @@ class Grocery {
   quantity: number;
   price: number;
 
-  // adding a constructor
+  // adding constructor
   constructor(n: string, d:string, q: number, p: number){
       this.name = n;
       this.department = d;
@@ -16,14 +16,14 @@ class Grocery {
 }
 
 // creating a grocery items list
-// **new keyword is used to inititalise objects**
+// **new is used to inititalise objects**
 let list_of_items = [
   new Grocery("milk", "dairy", 3, 10),
   new Grocery("bread", "bakery", 6, 25),
   new Grocery("egg", "dairy", 11, 10)
 ]
 
-// **accessing the html element with id app**
+// **accessing the html element**
 const ele = document.getElementById("app");
 
 // creatiing a <p> element for each item in the grocery list and
